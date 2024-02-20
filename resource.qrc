@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>student.bmp</file>
+        <file>studentVIP.bmp</file>
+    </qresource>
+    <qresource prefix="/font">
+        <file>Poppins-Light.ttf</file>
+    </qresource>
+</RCC>

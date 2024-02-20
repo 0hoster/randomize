@@ -10,10 +10,15 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Poppins Light</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,3">
    <item>
     <layout class="QVBoxLayout" name="menu">
      <item>
@@ -22,24 +27,21 @@
         <string>Config</string>
        </property>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_total">
-          <property name="text">
-           <string>总轮数</string>
-          </property>
-          <property name="buddy">
-           <cstring>spinBox_total</cstring>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
+        <item row="3" column="1">
          <widget class="QSpinBox" name="spinBox_total">
           <property name="minimum">
            <number>1</number>
           </property>
          </widget>
         </item>
-        <item row="0" column="0" colspan="2">
+        <item row="4" column="0" colspan="2">
+         <widget class="QCheckBox" name="checkBox_all">
+          <property name="text">
+           <string>全部轮一遍</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
          <widget class="QGroupBox" name="groupBox">
           <property name="title">
            <string>范围</string>
@@ -56,7 +58,14 @@
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QSpinBox" name="spinBox_from"/>
+            <widget class="QSpinBox" name="spinBox_from">
+             <property name="maximum">
+              <number>98</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_to">
@@ -73,16 +82,45 @@
              <property name="minimum">
               <number>1</number>
              </property>
+             <property name="value">
+              <number>46</number>
+             </property>
             </widget>
            </item>
           </layout>
          </widget>
         </item>
-        <item row="3" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_all">
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_total">
           <property name="text">
-           <string>全部轮一遍</string>
+           <string>总轮数</string>
           </property>
+          <property name="buddy">
+           <cstring>spinBox_total</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox_vip">
+          <property name="title">
+           <string>设置Vip</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label_vip">
+             <property name="text">
+              <string>当前0位Vip</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_vip">
+             <property name="text">
+              <string>编辑Vip</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -106,11 +144,7 @@
    <item>
     <layout class="QVBoxLayout" name="function">
      <item>
-      <widget class="QTextEdit" name="text_edit">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
+      <widget class="QListWidget" name="listWidget"/>
      </item>
     </layout>
    </item>
@@ -118,7 +152,12 @@
  </widget>
  <tabstops>
   <tabstop>btn_start</tabstop>
-  <tabstop>text_edit</tabstop>
+  <tabstop>spinBox_from</tabstop>
+  <tabstop>spinBox_to</tabstop>
+  <tabstop>spinBox_total</tabstop>
+  <tabstop>checkBox_all</tabstop>
+  <tabstop>btn_vip</tabstop>
+  <tabstop>listWidget</tabstop>
  </tabstops>
  <resources/>
  <connections/>
